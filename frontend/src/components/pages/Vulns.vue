@@ -174,6 +174,15 @@
           </v-btn>
         </template>
 
+        <!-- EPSS Score -->
+        <template v-slot:[`item.epss_score`]="{ item }">
+          <v-chip
+            :color="getRatingColor(item.epss_score)"
+            class="text-center font-weight-bold"
+            label
+          >{{item.epss_score}}</v-chip>
+        </template>
+
         <!-- Monitored -->
         <template v-slot:[`item.monitored`]="{ item }">
           <v-chip
@@ -247,6 +256,7 @@ export default {
       { text: 'Score', value: 'score', align: 'center', width: "10%" },
       { text: 'Summary', value: 'summary' },
       { text: 'Metadata', value: 'metadata', align: 'center', width: "8%", sortable: false },
+      { text: 'EPSS', value: 'epss_score', align: 'center', },
       { text: 'Monitored', value: 'monitored', align: 'center', },
       { text: 'Last update', value: 'updated_at', align: 'center', width: "12%" },
     ],
