@@ -28,7 +28,8 @@ def _refresh_metadata_cve(cve_id):
         'exploit_info': res['exploit_info'],
         'is_confirmed': res['is_confirmed'],
         'confirm_ref': res['confirm_ref'],
-        'raw': res['raw']
+        'raw': res['raw'],
+        'epss_score': res['raw'].get('epss_score', None)
     }
     m = Vuln.objects.filter(cve_id=cve_id)
     if m.count() > 0:
