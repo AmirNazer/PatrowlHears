@@ -78,7 +78,8 @@ class VulnSerializer(DynamicFieldsModelSerializer, serializers.HyperlinkedModelS
             'reflinks',
             'reflinkids',
             'created_at',
-            'updated_at'
+            'updated_at',
+            'epss_score'
         ]
     #
     # def __init__(self, *args, **kwargs):
