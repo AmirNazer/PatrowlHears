@@ -363,6 +363,7 @@ def add_vuln(self):
     vuln_data["is_confirmed"] = str(self.data.get('is_confirmed', 'false')).lower() in ['true', 'yes', 'y', 'on', '1']
     vuln_data["is_in_the_news"] = str(self.data.get('is_in_the_news', 'false')).lower() in ['true', 'yes', 'y', 'on', '1']
     vuln_data["is_in_the_wild"] = str(self.data.get('is_in_the_wild', 'false')).lower() in ['true', 'yes', 'y', 'on', '1']
+    vuln_data["epss_score"] = self.data.get('epss_score', None)
 
     vuln = Vuln(**vuln_data)
     try:
