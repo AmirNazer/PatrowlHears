@@ -83,6 +83,7 @@ class VulnBase(models.Model):
     created_at = models.DateTimeField(default=timezone.now, null=True)
     updated_at = models.DateTimeField(default=timezone.now, null=True)
     # history = HistoricalRecords(excluded_fields=['updated_at'], cascade_delete_history=True)
+    epss_score = models.FloatField(default=0.0, null=True)
 
     class Meta:
         # db_table = "vulns"
@@ -103,7 +104,7 @@ class VulnBase(models.Model):
             'access', 'impact',
             'is_exploitable', 'is_confirmed',
             'is_in_the_news', 'is_in_the_wild',
-            'score'
+            'score', 'epss_score'
         ]
         for field in self.__important_fields:
             setattr(self, '__original_%s' % field, getattr(self, field))
@@ -160,6 +161,7 @@ class VulnBase(models.Model):
             'updated_at': self.updated_at,
             'exploit_cnt': self.exploitmetadata_set.count(),
             'exploit_count': self.exploitmetadata_set.count(),
+            'epss_score': self.epss_score,
         }
 
     def to_json(self):
