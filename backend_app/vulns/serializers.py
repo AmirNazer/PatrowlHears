@@ -258,6 +258,7 @@ class VulnFilter(FilterSet):
             ('is_exploitable', _('Exploitable')), ('-is_exploitable', _('Exploitable (Desc)')),
             ('is_in_the_news', _('Is in the News')), ('-is_in_the_news', _('Is in the News (Desc)')),
             ('is_confirmed', _('Confirmed')), ('-is_confirmed', _('Not confirmed')),
+            ('epss_score', _('EPSS')), ('-epss_score', _('EPSS (Desc)')) # making epss sortable in the vulnerabilities page
         )
     )
 
