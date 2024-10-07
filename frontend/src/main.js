@@ -8,6 +8,7 @@ import moment from 'moment';
 import axios from 'axios';
 import './common/filters';
 import './common/scores';
+import '../MCI.css';
 
 import VuetifyConfirm from 'vuetify-confirm';
 Vue.use(VuetifyConfirm, { vuetify });
