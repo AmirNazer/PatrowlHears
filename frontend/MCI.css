@@ -1,0 +1,34 @@
+/* Custom styles for Vuetify components */
+
+/* Light Blue and Light Orange Colors */
+:root {
+  --light-blue: #87CEEB;
+  --light-orange: #FFA07A;
+}
+
+/* Style for v-app-bar */
+.v-app-bar {
+  background-color: var(--light-blue) !important;
+  color: white !important;
+}
+
+/* Style for v-card */
+.v-card {
+  background-color: var(--light-orange) !important;
+  color: white !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for v-card title */
+.v-card .v-card__title {
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Style for v-card text */
+.v-card .v-card__text {
+  color: white !important;
+  font-size: 1rem;
+}
